@@ -1,9 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
   <parent>
-    <groupId>io.takari</groupId>
-    <artifactId>takari</artifactId>
-    <version>27</version>
+    <groupId>tech.iooo.boot</groupId>
+    <artifactId>iooo-boot-parent</artifactId>
+    <version>1.1.6-SNAPSHOT</version>
   </parent>
   
   <artifactId>maven-wrapper</artifactId>
@@ -24,7 +25,6 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -48,7 +48,6 @@
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>2.6</version>
       <scope>test</scope>
     </dependency>
     <!-- Using zip util class, should be replaced with a zip lib -->
@@ -67,9 +66,24 @@
         <artifactId>provisio-maven-plugin</artifactId>
         <!--  careful - upgrade to 0.1.50 causes problem with extraction of tar.gz
         instead of into .mvn/wrapper it looses the .mvn path and extracts to wrapper -->
-        <version>0.1.46</version>
+        <version>0.1.56</version>
         <extensions>true</extensions>
       </plugin>
     </plugins>
   </build>
+
+  <repositories>
+    <repository>
+      <id>oss</id>
+      <name>oss</name>
+      <url>https://oss.sonatype.org/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  
 </project>
